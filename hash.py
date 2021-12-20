@@ -32,7 +32,7 @@ def list_files(top_path):
 
         # Exclude dot files like .git
         dirs[:] = [name for name in dirs if not name.startswith('.')]
-        files[:] = [name for name in files if not name.startswith('.')]
+        files[:] = [name for name in files if not name.endswith('zip')]
 
         for file_name in files:
             results.append(os.path.join(root, file_name))
