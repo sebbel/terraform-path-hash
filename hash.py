@@ -31,13 +31,14 @@ def list_files(top_path):
     for root, dirs, files in os.walk(top_path, topdown=True):
 
         # Exclude dot files like .git
-        dirs[:] = [name for name in dirs if not name.startswith('.')]
+        dirs[:] = [name for name in dirs if not name.startswith('node_modules')]
         files[:] = [name for name in files if not name.endswith('zip')]
 
         for file_name in files:
             results.append(os.path.join(root, file_name))
 
     results.sort()
+    print(results)
     return results
 
 
