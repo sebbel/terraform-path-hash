@@ -38,7 +38,6 @@ def list_files(top_path):
             results.append(os.path.join(root, file_name))
 
     results.sort()
-    print(results)
     return results
 
 
